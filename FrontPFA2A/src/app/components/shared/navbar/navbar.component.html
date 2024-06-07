@@ -1,0 +1,139 @@
+<nav>
+  <div
+    class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
+    style="width: 280px; height: 100vh"
+  >
+    <a class="navbar-brand" type="button" (click)="navigate('/')">
+      <h3 class="mt-2"><i class="bi bi-building me-1"></i>STOCK</h3>
+    </a>
+    <hr />
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a
+          *ngIf="isLogged"
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/dashboard')"
+          routerLink="/dashboard"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-speedometer2 me-1"></i> Tableau de Bord
+        </a>
+        <a
+          *ngIf="!isLogged"
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/')"
+          routerLink="/"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-house-door me-1"></i> Accueil
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/fournisseurs')"
+          routerLink="/students"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-people me-1"></i> Fournisseurs
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/produits')"
+          routerLink="/professors"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-people me-1"></i> Produits
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/stocks')"
+          routerLink="/promos"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-briefcase me-1"></i> Stocks
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/entropots')"
+          routerLink="/internships"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-briefcase me-1"></i> Entrepôts
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/clients')"
+          routerLink="/skills"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-buildings me-1"></i> Clients
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/ProdParEntropot/:id')"
+          routerLink="/companies"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-buildings me-1"></i> ProduitsParEntrepôt
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/commande/:id')"
+          routerLink="/tutors"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-buildings me-1"></i> Les commandes
+        </a>
+      </li>
+      <li *ngIf="isLogged" class="nav-item">
+        <a
+          class="nav-link text-white"
+          type="button"
+          (click)="navigate('/lignedecommande')"
+          routerLink="/tutors"
+          [routerLinkActive]="['active']"
+        >
+          <i class="bi bi-buildings me-1"></i>Ligne de commande
+        </a>
+      </li>
+    </ul>
+    <hr />
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a
+          *ngIf="!isLogged"
+          class="nav-link"
+          type="button"
+          (click)="navigate('/authenticate')"
+        >
+          <i class="bi bi-box-arrow-in-right me-1"></i> Connexion
+        </a>
+        <a *ngIf="isLogged" class="nav-link" type="button" (click)="logout()">
+          <i class="bi bi-box-arrow-in-left me-1"></i> Déconnexion
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
